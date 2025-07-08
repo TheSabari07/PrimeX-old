@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./src/routes/authRoutes.js";
 import dashboardRoutes from "./src/routes/protectedRoutes.js";
+import taskRoutes from "./src/routes/taskRoutes.js";
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ app.use(express.json());
 // api
 app.use("/api/auth", authRoutes);
 app.use("/api", dashboardRoutes);
-
+app.use("/api/tasks", taskRoutes);
 
 
 
